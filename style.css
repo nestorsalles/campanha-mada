@@ -1,0 +1,246 @@
+/* Estilos gerais */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Ajuste uniforme para banners de todas as seções de 1 a 11 */
+section .banner-image {
+  width: 100%;      /* Garante que o banner ocupe toda a largura da seção */
+  max-width: 100%;  /* Impede que a imagem ultrapasse a largura da seção */
+  height: auto;     /* Mantém a proporção da imagem */
+  object-fit: cover; /* Garante que a imagem cubra a área sem deformar, cortando onde necessário */
+  overflow: hidden; /* Impede que a imagem ultrapasse os limites */
+  margin: 0;        /* Remove qualquer margem */
+  padding: 0;       /* Remove qualquer padding */
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Espaçamento apenas entre as seções */
+section + section {
+  margin-top: var(--section-gap, 0px); /* Ajuste a distância entre seções */
+}
+
+/* Ajuste de imagem dentro das seções */
+.section-image {
+  width: 100%;
+  height: auto;
+  max-height: 100%; /* Para evitar cortes verticais */
+  object-fit: cover; /* Ajuste para exibir a imagem completa sem cortes */
+}
+
+/* Rodapé */
+.footer {
+  background-color: #a6907d;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-logo {
+  width: 400px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+
+/* Definindo grid para 4 ícones por linha */
+.footer-columns {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 4 colunas com tamanhos iguais */
+  gap: 20px; /* Espaço entre os itens */
+  max-width: 100%; /* Largura máxima */
+  margin: 0 auto; /* Centraliza o grid */
+  padding: 0;
+}
+
+/* Espaçamento e alinhamento dos itens */
+.footer-item {
+  display: flex;
+  align-items: center;
+}
+
+/* Espaçamento entre ícone e texto */
+.footer-icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+/* Texto com link */
+.footer-link {
+  color: #000000;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.footer-link:hover {
+  color: #0000cd;
+}
+
+.footer-contact {
+  color: white;
+  font-weight: bold;
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+.footer-contact p {
+  margin: 0;
+  cursor: pointer;
+}
+
+.footer-rights {
+  margin-top: 15px;
+  font-size: 15px;
+}
+
+.footer-rights p {
+  margin: 5px 0;
+}
+
+.onpubli-link {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px
+}
+
+.onpubli-link:hover {
+  color: #FFDE00;
+}
+
+.footer-heart {
+  color: #FF0000;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#backToTop {
+  position: fixed;
+  bottom: 20px; /* Distância da parte inferior da tela */
+  right: 20px;  /* Distância do lado direito da tela */
+  display: none; /* O botão começa invisível */
+  background-color: #1a237e;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 18px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgb(0, 0, 0);
+  transition: background-color 0.3s ease;
+}
+
+/* Estilo para o botão do WhatsApp fixo */
+#whatsapp-button {
+  position: fixed;
+  bottom: 20px; /* Distância do fundo da tela */
+  right: 6px;  /* Distância da lateral direita da tela */
+  z-index: 1000; /* Garantir que o botão esteja acima de outros elementos */
+}
+
+/* Estilo para o ícone do WhatsApp */
+#whatsapp-icon {
+  width: 60px; /* Tamanho padrão do ícone (você pode ajustar conforme necessário) */
+  height: 60px; /* Mantenha a altura igual à largura para manter o formato */
+  transition: transform 0.3s ease; /* Transição suave para efeitos de hover */
+}
+
+/* Efeito de hover (opcional) */
+#whatsapp-button:hover #whatsapp-icon {
+  transform: scale(1.1); /* Aumenta o ícone quando o usuário passar o mouse */
+}
+
+/* Media Queries para tornar o site responsivo */
+@media screen and (max-width: 500px) {
+  /* CLASSES GERAIS */
+  .flex{
+    flex-direction: row;
+  }
+
+  /* RODAPÉ */
+  .footer-columns {
+    display: grid;
+    gap: 40px; /* Espaço entre os itens */
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .footer-icon {
+    width: 45px;
+    height: 45px;
+  }
+
+  .footer-rights {
+    margin-top: 40px;
+    font-size: 15px;
+  }
+
+  .footer-heart {
+    font-size: 15px;
+  }
+
+  #whatsapp-button {
+    right: 6px;  /* Distância da lateral direita da tela */
+  }
+}
+
+/* Media Queries para tornar o site responsivo */
+@media screen and (max-width: 380px) {
+  /* CLASSES GERAIS */
+  .flex{
+    flex-direction: row;
+  }
+
+  .footer-logo {
+    width: 340px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 50px;
+  }
+
+  .footer-link {
+    color: #000000;
+    text-decoration: none;
+    font-size: 18px;
+  }
+
+  .footer-columns {
+    grid-template-columns: repeat(1, 1fr); /* 4 colunas com tamanhos iguais */
+    gap: 40px; /* Espaço entre os itens */
+    max-width: 350px; /* Largura máxima */
+    margin: -10px auto; /* Centraliza o grid */
+  }
+
+  .footer-rights {
+    margin-top: 40px;
+  }
+
+  #whatsapp-button {
+    right: 6px;  /* Distância da lateral direita da tela */
+  }
+
+  #whatsapp-icon {
+    width: 45px; /* Tamanho padrão do ícone (você pode ajustar conforme necessário) */
+    height: 45px; /* Mantenha a altura igual à largura para manter o formato */
+    transition: transform 0.3s ease; /* Transição suave para efeitos de hover */
+  }
+}
